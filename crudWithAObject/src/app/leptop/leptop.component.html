@@ -1,0 +1,67 @@
+<div class="first1">
+  <div class="first2">
+  <div class="it">
+    ID : 
+    <input type="text" [(ngModel)]="tempLep.id"/>
+  </div>
+
+  <div class="it">
+    Name : 
+    <input type="text" [(ngModel)]="tempLep.Name"/>
+  </div>
+
+  <div class="it">
+    Series Name : 
+    <input type="text" [(ngModel)]="tempLep.SName"/>
+  </div>
+
+  <div class="it">
+    Company Name : 
+    <input type="text" [(ngModel)]="tempLep.CName"/>
+  </div>
+
+  <div class="it">
+    Image : 
+    <input type="text" [(ngModel)]="tempLep.image" />
+  </div>
+
+  <div class="it">
+    Price : 
+    <input type="text" [(ngModel)]="tempLep.price"/>
+  </div>
+
+  <div class="it"><button class="btn btn-success" *ngIf="Y==-1" (click)="addLep()">Add</button>
+  <button  *ngIf="Y>-1" class="btn btn-warning" (click)="editLep()">Edit</button></div>
+</div>
+</div>
+
+<div class="SS"><input class="S" type="text" [(ngModel)]="ST" (keyup)="searchLep()"/></div>
+
+<div class="main">
+  <div *ngIf="ST==''">
+  <tbody class="main1" *ngFor="let L of lep; let i=index">
+    <td class="it2">{{L.id}}</td>
+    <td class="it1">{{L.Name | lowercase}}</td>
+    <td class="it3">{{L.SName | uppercase}}</td>
+    <td class="it3">{{L.CName | uppercase}}</td>
+    <td><img class="l" src={{L.image}} /></td>
+    <td class="it2">{{L.price}}</td>
+    <td><button class="btn btn-warning" (click)="setLep(L.id)">Edit</button></td>
+    <td><button class="btn btn-danger" (click)="removeLep(L.id)">Delete</button></td>
+  </tbody>
+  </div>
+
+  <div *ngIf="ST!==''">
+    <tbody class="main1" *ngFor="let L of FL; let i=index">
+      <td class="it2">{{L.id}}</td>
+      <td class="it1">{{L.Name | lowercase}}</td>
+      <td class="it3">{{L.SName | uppercase}}</td>
+      <td class="it3">{{L.CName | uppercase}}</td>
+      <td><img class="l" src={{L.image}} /></td>
+      <td class="it2">{{L.price}}</td>
+      <td><button class="btn btn-warning" (click)="setLep(L.id)">Edit</button></td>
+      <td><button class="btn btn-danger" (click)="removeLep(L.id)">Delete</button></td>
+    </tbody>
+    </div>
+
+</div>

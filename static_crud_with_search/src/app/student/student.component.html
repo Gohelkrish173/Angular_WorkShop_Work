@@ -1,0 +1,33 @@
+<div class="first">
+  <input type="text" [(ngModel)]="tempName" />
+  <button class="btn btn-success" *ngIf="X==-1" (click)="addStu()">Add</button>
+  <button class="btn btn-warning" *ngIf="X>-1" (click)="editStu()">Edit</button>
+</div>
+
+<div class="main">
+  <thead >
+    <input type="text" [(ngModel)]="ST" (keyup)="searchStu()"/>
+  </thead>
+  </div>
+
+  <div class="main1">
+  <table>
+    <tbody *ngIf="ST==''">
+    <tr *ngFor="let s of Name"> 
+      <td>{{s}}</td>
+      <td><button class="btn btn-warning" (click)="setEdit(s)">Edit</button></td>
+      <td><button class="btn btn-danger" (click)="delete(s)">Delete</button></td>
+    </tr>
+  </tbody>
+  </table>
+
+  <table>
+    <tbody *ngIf="ST!==''">
+    <tr *ngFor="let s of FS"> 
+      <td>{{s}}</td>
+      <td><button class="btn btn-warning" (click)="setEdit(s)">Edit</button></td>
+      <td><button class="btn btn-danger" (click)="delete(s)">Delete</button></td>
+    </tr>
+  </tbody>
+  </table>
+  </div>

@@ -1,0 +1,20 @@
+<div class="box">
+  
+<table class="main">
+  <tr class="ti1">
+    <td class="item">RNo</td>
+    <td class="item">Name</td>
+    <td class="item">ENR</td>
+    <td class="item">Mobile</td>
+    <td class="item">SPI</td>
+  </tr>
+  <tr *ngFor="let s of stu;" class="ti2">
+  <td class="item">{{s.RNo}}</td>
+  <td class="item" (click)="detail(s.RNo)">{{s.Name}}</td>
+  <td class="item">{{s.ENR}}</td>
+  <td class="item">{{s.Mobile}}</td>
+  <td class="item">{{s.SPI}}</td>
+  <td class="item"><button class="btn btn-danger" (click)="deleteById(s.RNo)" >Delete</button></td>
+</tr>
+</table>
+</div>

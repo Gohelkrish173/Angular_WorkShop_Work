@@ -1,0 +1,26 @@
+<input type="text" [(ngModel)]="tempStudent" class="form-control" />
+<button *ngIf="idToEdit==-1" (click)="addStudent()" class="btn btn-primary">Add</button>
+<button *ngIf="idToEdit>-1" (click)="editStudent()" class="btn btn-primary">Edit</button>
+<table>
+    <thead>
+        <tr>
+            <td colspan="3">
+                <input type="text" [(ngModel)]="searchText" (keyup)="searchStudents()" />
+            </td>
+        </tr>
+    </thead>
+    <tbody *ngIf="searchText==''">
+        <tr *ngFor="let stu of students; let i = index">
+            <td>{{ stu }}</td>
+            <td><button (click)="setForEdit(i)" class="btn btn-warning">Edit</button></td>
+            <td><button (click)="deleteStudent(i)" class="btn btn-danger">Delete</button></td>
+        </tr>
+    </tbody>
+    <tbody *ngIf="searchText!=''">
+        <tr *ngFor="let stu of filteredStudents; let i = index">
+            <td>{{ stu }}</td>
+            <td><button (click)="setForEdit(i)" class="btn btn-warning">Edit</button></td>
+            <td><button (click)="deleteStudent(i)" class="btn btn-danger">Delete</button></td>
+        </tr>
+    </tbody>
+</table>

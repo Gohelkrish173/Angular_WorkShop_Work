@@ -1,0 +1,37 @@
+.first{
+  height: 225px;
+}
+
+.f{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  gap: 1rem;
+}
+
+.main{
+  width: 100%; 
+  align-items: center;
+}
+
+.m{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.item{
+  width: 75px;
+}
+
+.S{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.SS{
+  width: 40%;
+}

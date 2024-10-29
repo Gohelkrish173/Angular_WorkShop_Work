@@ -1,0 +1,34 @@
+<div class="first">
+  <input type="text"  [(ngModel)]="tempName" />
+  <button *ngIf = "idToUpdate==-1" class="btn btn-success" (click)="addFac()">Add</button>
+  <button *ngIf = "idToUpdate>-1" (click)="editFac()">Edit</button> <br/>
+</div>
+
+<br/>
+  <div class="main">
+    <tbody>
+      <thead class="main1">
+        <input class="m"  type="text" [(ngModel)]="ST" (keyup)="searchFac()" />
+      </thead><br>
+    </tbody>
+  </div>    
+    
+  <div class="m">
+  <tbody *ngIf="ST==''">
+    <tr *ngFor="let s of Name; let i=index">
+      <td>{{ s | lowercase  }}</td>
+      <td><button class="btn btn-warning" (click)="setToEdit(s)">Edit</button></td>
+      <td><button class="btn btn-danger" (click)="removeName(s)">Delete</button></td>
+    </tr>
+   </tbody>
+  
+
+  <tbody *ngIf="ST!==''">
+      <tr *ngFor="let s of FS; let i=index">
+        <td>{{ s }}</td>
+        <td><button class="btn btn-warning" (click)="setToEdit(s)">Edit</button></td>
+        <td><button class="btn btn-danger" (click)="removeName(s)">Delete</button></td>
+      </tr>
+    </tbody>
+  </div>
+

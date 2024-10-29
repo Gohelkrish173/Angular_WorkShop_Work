@@ -1,0 +1,16 @@
+.Navbar{
+  background-color: aliceblue;
+  display : flex;
+  align-items: center;
+  height: 100px;
+  justify-content: space-evenly;
+}
+
+.Items{
+  background-color: aliceblue;
+  border : none;
+  height: auto;
+  width: 80%;
+  font-size: 1.5rem;
+}
+

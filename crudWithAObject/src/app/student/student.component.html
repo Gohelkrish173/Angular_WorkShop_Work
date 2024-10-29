@@ -1,0 +1,51 @@
+<div class="first">
+  
+  <div class="f">
+    ID : 
+    <input type="text" [(ngModel)]="tempStu.id"/>
+  </div>
+
+  <div class="f">
+    Name : 
+    <input type="text" [(ngModel)]="tempStu.name"/>
+  </div>
+  
+  <div class="f">
+    Birthdate : 
+    <input type="date" [(ngModel)]="tempStu.birthdate"/>
+  </div>
+
+  <div class="f">
+    Mobile : 
+    <input type="text" [(ngModel)]="tempStu.mobile"/>
+  </div>
+
+  <div class="f"><button class="btn btn-success"   *ngIf="Y==-1" (click)="addStu()">Add</button></div>
+  <div class="f"><button  class="btn btn-warning" *ngIf="Y>-1" (click)="editStu()">Edit</button></div>
+</div>
+
+<div class="S"><input class="SS" type="text" [(ngModel)]="ST" (keyup)="searchStu()" /></div>
+
+<div class="main">
+  <div *ngIf="ST==''">
+  <tbody  class="m" *ngFor="let S of Stu; let i=index">
+    <td class="item">{{S.id}}</td>
+    <td class="item">{{ S.name | uppercase}}</td>
+    <td class="item">{{S.birthdate | date}}</td>
+    <td class="item">{{S.mobile}}</td>
+    <td><button class="btn btn-warning item" (click)="setEdit(S.id)">Edit</button></td>
+    <td><button class="btn btn-danger item" (click)="remove(S.id)">Delete</button></td>
+  </tbody>
+  </div>
+
+  <div *ngIf="ST!==''">
+  <tbody  class="m" *ngFor='let S of FS; let i=index'>
+    <td class="item">{{S.id}}</td>
+    <td class="item">{{ S.name | uppercase}}</td>
+    <td class="item">{{S.birthdate | date}}</td>
+    <td class="item">{{S.mobile}}</td>
+    <td><button class="btn btn-warning item" (click)="setEdit(S.id)">Edit</button></td>
+    <td><button class="btn btn-danger item" (click)="remove(S.id)">Delete</button></td>
+  </tbody>
+  </div>
+</div>

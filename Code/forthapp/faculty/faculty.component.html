@@ -1,0 +1,30 @@
+Enter id
+<input type="text"class="form-control" [(ngModel)]="tempFac.id" />
+Enter name
+<input type="text"class="form-control" [(ngModel)]="tempFac.name" />
+Enter age
+<input type="text"class="form-control" [(ngModel)]="tempFac.age" />
+Enter initial
+<input type="text"class="form-control" [(ngModel)]="tempFac.initial" />
+
+<button (click)="addFaculty()" class="btn btn-primary">Add</button>
+
+<table class="m-2 table" >
+    <thead>
+        <tr>
+            <td colspan="3">
+                <input type="text"  />
+            </td>
+        </tr>
+    </thead>
+    <tbody >
+        <tr *ngFor="let fac of faculties; let i=index">
+            <td>{{ fac.id }}</td>
+            <td>{{ fac.name }}</td>
+            <td>{{ fac.age }}</td>
+            <td>{{ fac.initial }}</td>
+            <td><button class="btn btn-warning">Edit</button></td>
+            <td><button class="btn btn-danger">Delete</button></td>
+        </tr>
+    </tbody>
+</table>

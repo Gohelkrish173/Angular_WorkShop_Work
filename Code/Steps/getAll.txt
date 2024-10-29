@@ -1,0 +1,22 @@
+Step 00: Create API
+
+Step 01: Create Service with ng g s api-faculty 
+
+Step 02: create apiUrl variable and assign value in api-faculty.ts
+
+Step 03: add HttpClientModule in imports array in app.module.ts
+
+Step 03.5: Inject HttpClient in api-faculty.ts
+constructor(private _http:HttpClient) { }
+
+Step 04: create getAll method in api-faculty.ts
+
+Step 05: inject ApiFacultyService in faculty.component.ts
+constructor(private _api:ApiFacultyService){}
+
+Step 06: create ngOnInit method in faculty.component.ts
+ngOnInit(){
+   this._api.getAll().subscribe((res:any)=>{
+      this.faculties = res;
+    });
+}

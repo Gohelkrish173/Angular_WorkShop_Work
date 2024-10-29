@@ -1,0 +1,46 @@
+<!-- <div class="Add">
+  <table>
+    
+    <tr>
+      <td><span>Id : </span></td>
+      <td><input type="text" [(ngModel)]="tempFac.id" /></td>
+    </tr>
+
+    <tr>
+      <td>Name :</td>
+      <td><input type="text" [(ngModel)]="tempFac.name" /></td>
+    </tr>
+
+    <tr>
+      <td><span>Image : </span></td>
+      <td><input type="text" [(ngModel)]="tempFac.image" /></td>
+    </tr>
+
+    <tr>
+      <td><span>Mobile :</span></td>
+      <td><input type="text" [(ngModel)]="tempFac.mobile" /></td>
+    </tr>
+
+    <tr>
+      <td><span>Email :</span></td>
+      <td><input type="text" [(ngModel)]="tempFac.email" /></td>
+    </tr>
+
+      <tr><button class="btn btn-success" *ngIf="X==-1">Add</button></tr>
+      <tr><button class="btn btn-warning" *ngIf="X>-1">Edit</button></tr>
+  </table>  
+</div> -->
+
+<div class="main">
+  <div class="m">
+  <tbody *ngFor="let f of faculties; let i=index">
+    <td>{{f.id}}</td>
+    <td>{{f.name}}</td>
+    <td><img src={{f.image}} /></td>
+    <td>{{f.mobile}}</td>
+    <td>{{f.email}}</td>
+    <td><button class="btn btn-warning" >Edit</button></td>
+    <td><button class="btn btn-danger" >Delete</button></td>
+  </tbody>
+  </div>
+</div>

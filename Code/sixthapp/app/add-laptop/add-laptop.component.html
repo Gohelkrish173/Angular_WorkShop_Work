@@ -1,0 +1,6 @@
+<form [formGroup]="laptopForm" (ngSubmit)="save()">
+    Name : <input type="text" formControlName="LaptopName"/> <br/>
+    Image : <input type="text" formControlName="LaptopImage"/> <br/>
+    Price : <input type="text" formControlName="LaptopPrice"/> <br/>
+    <input [disabled]="!laptopForm.valid" type="submit" />
+</form>

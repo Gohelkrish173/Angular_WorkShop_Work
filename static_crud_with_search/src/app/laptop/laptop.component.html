@@ -1,0 +1,29 @@
+<div class="first">
+  <input type="text" [(ngModel)]="tempName" />
+  <button class="btn btn-success" *ngIf="Y==-1" (click)="addLep()">Add</button> 
+  <button class="btn btn-warning" *ngIf="Y>-1" (click)="editLep()">Edit</button>
+</div>
+ 
+<div class="main1">
+  <tbody>
+    <input type="text" [(ngModel)]="ST" (keyup)="searchLep()" />
+  </tbody>
+</div> 
+
+<div class="main">
+  <tbody *ngIf="ST==''">
+    <tr *ngFor='let L of Name; let i=index'>
+      <td>{{L}}</td>
+      <td><button class="btn btn-warning" (click)="setEdit(i)">Edit</button></td>
+      <td><button class="btn btn-danger" (click)="delete(i)">Delete</button></td>
+    </tr>
+  </tbody>
+
+  <tbody *ngIf="ST!==''">
+    <tr *ngFor='let L of FL; let i=index'>
+      <td>{{L}}</td>
+      <td><button class="btn btn-warning" (click)="setEdit(i)">Edit</button></td>
+      <td><button class="btn btn-danger" (click)="delete(i)">Delete</button></td>
+    </tr>
+  </tbody>
+</div>

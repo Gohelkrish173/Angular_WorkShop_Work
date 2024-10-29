@@ -1,0 +1,21 @@
+.mainbox{
+  width: 100%;
+  border : 2px solid black;
+  margin-top: 10px;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box{
+  text-align: center;
+  width:100%;
+  gap: 1rem;
+  height: auto;
+}
+
+.main{
+  width: 40%;
+  justify-content: space-evenly;
+}

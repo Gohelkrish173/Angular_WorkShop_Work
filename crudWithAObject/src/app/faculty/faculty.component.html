@@ -1,0 +1,61 @@
+<div class="first">
+  <div class="item">
+    <p>Id : </p>
+    <input type="text" [(ngModel)]="tempFac.id" />
+  </div>
+    
+  <div class="item">
+    <p>Name : </p>
+    <input type="text" [(ngModel)]="tempFac.name" />
+  </div>
+
+  <div class="item">
+    <p>ImgUrl : </p>
+    <input type="text" [(ngModel)]="tempFac.image" />
+  </div>
+
+  <div class="item">
+    <p>Age : </p>
+    <input type="text" [(ngModel)]="tempFac.age" />
+  </div>
+
+  <div class="item">
+    <p>Experience : </p>
+    <input type="text" [(ngModel)]="tempFac.exp" />
+  </div>
+
+  <div class="item">
+    <button class="btn btn-success" *ngIf="Y==-1" (click)="addFac()">Add</button>
+    <button class="btn btn-warning" *ngIf="Y>-1" (click)="editFac()">Edit</button>
+  </div>
+</div>
+
+<thead class="m1">
+  <input class="st" type="text" [(ngModel)]="ST" (keyup)="searchFac()"/>
+</thead>
+
+<div class="m1">
+  <tbody class="main" *ngIf="ST==''">
+    <thead class="items" *ngFor="let F of Fac; let i=index" >
+      <td class="item3">{{F.id}}</td>
+      <td class="item2">{{F.name | uppercase}}</td>
+      <td class="item4">{{F.image}}</td>
+      <td class="item3">{{F.age}}</td>
+      <td class="item3">{{F.exp}}</td>
+      <td class="item3"><button class="btn btn-warning" (click)="setEdit(F.id)">Edit</button></td>
+      <td class="item3"><button class="btn btn-danger" (click)="remove(F.id)">Delete</button></td>
+    </thead>
+  </tbody>
+
+  <tbody class="main" *ngIf="ST!==''">
+    <thead class="items" *ngFor="let F of FF; let i=index" >
+      <td class="item3">{{F.id}}</td>
+      <td class="item2">{{F.name | uppercase}}</td>
+      <td class="item4">{{F.image}}</td>
+      <td class="item3">{{F.age}}</td>
+      <td class="item3">{{F.exp}}</td>
+      <td class="item3"><button class="btn btn-warning" (click)="setEdit(F.id)">Edit</button></td>
+      <td class="item3"><button class="btn btn-danger" (click)="remove(F.id)">Delete</button></td>
+    </thead>
+  </tbody>
+</div>

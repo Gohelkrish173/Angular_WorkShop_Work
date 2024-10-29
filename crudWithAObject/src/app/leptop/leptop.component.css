@@ -1,0 +1,53 @@
+.first1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.it{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin : 10px;
+}
+
+.main{
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.main1{
+  width: 99%;
+  display: flex;
+  justify-content: space-evenly;
+  margin : 10px;
+}
+
+.l{
+  height: 100px;
+  width: 100px;
+  border-radius: 25px;
+}
+
+.it1{
+  width: 250px;
+}
+
+.it2{
+  width: 20px;
+}
+
+.it3{
+  width: 100px;
+}
+
+.SS{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.S{
+  width: 40%;
+}
